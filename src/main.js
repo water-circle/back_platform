@@ -13,7 +13,9 @@ import './assets/font/iconfont.css'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.prototype.$http = http
+
 // jaifaifainagiang
+
 if (process.env.NODE_ENV === 'development') require('@/api/mock')
 
 new Vue({
