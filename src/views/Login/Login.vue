@@ -32,24 +32,11 @@
             @keyup.enter.native="handleLogin"
           ></el-input>
         </el-form-item>
-        <!-- <el-form-item prop="code" label="验证码">
-          <el-input
-            v-model="loginForm.code"
-            auto-complete="off"
-            placeholder="验证码"
-            style="width: 40%"
-            @keyup.enter.native="handleLogin"
-          ></el-input>
-          <div class="login-code">
-            <img :src="codeUrl" class="login-code-img" @click="getCode" />
-          </div>
-        </el-form-item> -->
         <el-checkbox
           v-model="loginForm.rememberMe"
           style="margin: 0px 0px 25px 0px; color: #000; float: left"
           >记住我</el-checkbox
         >
-        <!-- <a class="forget_titlt">忘记密码?</a> -->
         <el-form-item style="width: 100%">
           <el-button
             :loading="loading"
@@ -64,140 +51,6 @@
         </el-form-item>
       </el-form>
     </div>
-    <!-- <div v-show="isRegister">
-      <div>
-        <el-form
-          ref="registerForm"
-          :model="registerForm"
-          :rules="resgiterRules"
-          class="register-form"
-          style="padding: 25px 30px 25px 34px"
-        >
-          <div class="title_s">
-            <h3 class="title">欢迎注册</h3>
-            <div class="wel_title">
-              <span>已经有账号了？</span>
-              <a @click="goTologin">登录</a>
-            </div>
-            <div class="title_b"></div>
-            <div class="title_line_s"></div>
-          </div>
-          <el-form-item prop="access_name" label="接入方名称">
-            <el-input
-              v-model="registerForm.access_name"
-              size="medium"
-              type="text"
-              class="inputing"
-              auto-complete="off"
-              placeholder="请输入接入方名称"
-            ></el-input>
-          </el-form-item>
-
-          <el-form-item prop="access_abbreviation" label="接入方简称">
-            <el-input
-              v-model="registerForm.access_abbreviation"
-              size="medium"
-              type="text"
-              class="inputing"
-              auto-complete="off"
-              placeholder="请输入接入方简称"
-            ></el-input>
-          </el-form-item>
-          <el-form-item prop="access_type" label="接入类型">
-            <el-input
-              v-model="registerForm.access_type"
-              size="medium"
-              type="text"
-              class="inputing"
-              auto-complete="off"
-              placeholder="请输入接入类型"
-              style="margin-left: 13px"
-            ></el-input>
-          </el-form-item>
-          <el-form-item prop="access_username" label="联系人姓名">
-            <el-input
-              v-model="registerForm.access_username"
-              size="medium"
-              type="text"
-              class="inputing"
-              auto-complete="off"
-              placeholder="请输入联系人姓名"
-            ></el-input>
-          </el-form-item>
-          <el-form-item prop="access_email" label="邮箱">
-            <el-input
-              v-model="registerForm.access_email"
-              size="medium"
-              class="inputing"
-              auto-complete="off"
-              placeholder="请输入邮箱"
-              type="text"
-              style="margin-left: 40px"
-              :rules="[
-                { required: true, message: '请输入邮箱地址', trigger: 'blur' },
-                {
-                  type: 'email',
-                  message: '请输入正确的邮箱地址',
-                  trigger: ['blur', 'change'],
-                },
-              ]"
-            ></el-input>
-          </el-form-item>
-          <el-form-item label="手机验证码" prop="verificationCode">
-            <el-input v-model="loginForm.verificationCode">
-              <template slot="append">
-                <el-button
-                  v-if="loginForm.showloginCode"
-                  type="primary"
-                  @click="getloginPhoneCode"
-                  >获取验证码</el-button
-                >
-                <div v-else>{{ loginForm.count }}</div>
-              </template>
-            </el-input>
-          </el-form-item>
-
-          <el-form-item prop="code" label="验证码">
-            <el-input
-              v-model="registerForm.code"
-              auto-complete="off"
-              placeholder="验证码"
-              style="width: 36%; margin-left: 27px"
-              @keyup.enter.native="handleRegister"
-            ></el-input>
-            <button class="yzm_btn">获取验证码</button>
-          </el-form-item>
-
-          <el-form-item style="width: 100%">
-            <el-button
-              :loading="loading"
-              size="medium"
-              type="primary"
-              class="btn"
-              @click.native.prevent="handleRegister"
-            >
-              <span v-if="!loading">注册</span>
-              <span v-else>注 册 中...</span>
-            </el-button>
-            <el-button
-              :loading="loading"
-              size="medium"
-              type="primary"
-              class="btn"
-              style="float: right"
-            >
-              <span v-if="!loading" @click="toLogin()">取消</span>
-            </el-button>
-            <svg-icon
-              slot="prefix"
-              icon-class="user"
-              class="el-input__icon input-icon"
-            />
-          </el-form-item>
-        </el-form>
-      </div>
-      <div class="el-login-footer"></div>
-    </div> -->
     <div v-show="isSuccess">
       <div class="register-form">
         <img class="success_icon" src="@/assets/logo.png" />
