@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Main from '../views/Main.vue'
+import Login from '../components/Login.vue'
 const originPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push (location) {
   return originPush.call(this, location).catch((err) => err)
@@ -8,16 +9,26 @@ VueRouter.prototype.push = function push (location) {
 Vue.use(VueRouter)
 
 const routes = [
+  // 重定向到login
   {
     path: '/',
-    name: 'Login',
-    component: () => import('../views/Login/Login.vue')
+    redirect: '/login'
   },
   {
-    path: '',
-    name: 'Login',
-    component: () => import('../views/Login/Login.vue')
+    path: '/login',
+    name: Login,
+    component: Login
   },
+  // {
+  //   path: '/',
+  //   name: 'Login',
+  //   component: () => import('../views/Login/Login.vue')
+  // },
+  // {
+  //   path: '',
+  //   name: 'Login',
+  //   component: () => import('../views/Login/Login.vue')
+  // },
   {
     path: '/index',
     name: 'Main',

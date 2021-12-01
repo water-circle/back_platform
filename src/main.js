@@ -7,6 +7,8 @@ import router from './router'
 import store from './store'
 import http from 'axios'
 import './plugins/element.js'
+import './assets/css/global.css'
+import './assets/font/iconfont.css'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
