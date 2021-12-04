@@ -116,10 +116,10 @@ export default {
           sum: 100
         }],
         user: [
-          { id: 1, username: 'admin', password: '111' },
-          { id: 2, username: 'normal', password: '222' },
-          { id: 3, username: 'wsy', password: '123' },
-          { id: 4, username: 'whm', password: '234' }
+          { id: 1, username: 'admin', password: '000000' },
+          { id: 2, username: 'normal', password: '111111' },
+          { id: 3, username: 'wsy', password: '222222' },
+          { id: 4, username: 'whm', password: '333333' }
         ]
       }
     }

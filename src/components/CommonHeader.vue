@@ -24,7 +24,7 @@
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>个人中心</el-dropdown-item>
-          <el-dropdown-item><span @click="goToLogin">退出</span></el-dropdown-item>
+          <el-dropdown-item><span @click="logout">退出</span></el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -43,9 +43,11 @@ export default {
     handleMenu () {
       this.$store.commit('collapseMenu') // 用commit去使用mutation里面的方法
     },
-    goToLogin () {
+    logout () {
       console.log('点击了退出按钮')
-      this.$router.push({ path: '/' })
+      // 退出登录要先清楚token
+      window.sessionStorage.clear()
+      this.$router.push({ path: '/login' })
     }
   },
   updated () {

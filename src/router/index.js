@@ -72,4 +72,19 @@ const router = new VueRouter({
   routes
 })
 
+// 导航守卫控制访问权限
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login') {
+    return next()
+  } else {
+    const tokenStr = window.sessionStorage.getItem('token')
+    // 如果没有token，强制跳转到login页面
+    if (!tokenStr) {
+      return next('/login')
+    } else {
+      next()
+    }
+  }
+})
+
 export default router
